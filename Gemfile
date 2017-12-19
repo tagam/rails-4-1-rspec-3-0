@@ -40,3 +40,25 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
+group :development, :test do
+  # RSpecを含んでいるgemです。
+  # このgemはRails専用の機能を追加するRSpecのラッパーライブラリになっています。
+  gem "rspec-rails", "~> 3.1.0"
+  # Railsがデフォルトで提供するフィクスチャをずっと便利なファクトリで置き換えます。
+  # フィクスチャやファクトリはテストスイート用のテストデータを作成するために使われます。
+  gem "factory_girl_rails", "~> 4.4.1"
+end
+
+group :test do
+  # 名前やメールアドレス、その他のプレースホルダをファクトリに提供します。
+  gem "faker", "~> 1.4.3"
+  # ユーザとWebアプリケーションのやりとりをプログラム上で簡単にシミュレートできるようにします。
+  gem "capybara", "~> 2.4.3"
+  # まっさらな状態で各specが実行できるように、テストデータベースのデータを掃除します。
+  gem "database_cleaner", "~> 1.3.0"
+  # あなたの好きなタイミングでデフォルトのwebブラウザを開き、アプリケーションの表示内容を見せることです。
+  # テストをデバッグするときには 大変便利です。
+  gem "launchy", "~> 2.4.2"
+  # ブラウザ上でJavaScriptを利用する機能をCapybaraでテストできるようにします。
+  gem "selenium-webdriver", "~> 2.43.0"
+end
